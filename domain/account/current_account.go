@@ -21,8 +21,8 @@ func (c *CurrentAccount) Deposit(amount int) error {
 	return nil
 }
 
-func (c *CurrentAccount) GetBalance() int {
-	return c.Balance
+func (c *CurrentAccount) GetBalance() (int, error) {
+	return c.Balance, nil
 }
 
 func (c *CurrentAccount) maximumWithdrawAmount() int {

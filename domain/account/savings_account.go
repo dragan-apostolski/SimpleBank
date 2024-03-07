@@ -23,6 +23,6 @@ func (s *SavingsAccount) Deposit(amount int) error {
 	return nil
 }
 
-func (s *SavingsAccount) GetBalance() int {
-	return s.Balance
+func (s *SavingsAccount) GetBalance() (int, error) {
+	return s.Balance, nil
 }

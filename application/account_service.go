@@ -64,3 +64,17 @@ func (as *AccountService) Deposit(accountId int, amountToDeposit int) error {
 
 	return nil
 }
+
+func (as *AccountService) GetBalance(accountId int) (*int, error) {
+	acc, ok := as.database.Accounts[accountId]
+	if !ok {
+		return nil, &AccountNotFoundException{}
+	}
+
+	balance, err := acc.GetBalance()
+	if err != nil {
+		return nil, err
+	}
+
+	return &balance, nil
+}
