@@ -12,7 +12,9 @@ The database has 4 prepopulated accounts (IDs 1-4).
 We can check the balance of the accounts using the /balance endpoint:
 
 `curl -X GET "http://localhost:8080/balance?account_id=1"`
+
 `Account balance: 200`
+
 We can open another savings account with id 5 with 500 euros balance
 
 `curl -X POST -d "account_id=5&amount_to_deposit=500" http://localhost:8080/open-savings-account`
